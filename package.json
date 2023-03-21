@@ -1,6 +1,7 @@
 {
 	"name": "star-systems",
 	"version": "0.0.1",
+	"description": "A rewrite of github.com/Natalius-dev/Solar-System to make everything more modular",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
@@ -16,5 +17,11 @@
 		"tailwindcss": "^3.2.7",
 		"vite": "^4.2.0"
 	},
+	"repository": {
+	  "type": "git",
+	  "url": "github.com/Natalius-dev/Star-Systems"
+	},
+	"author": "Natalius",
+	"license": "CC BY-NC 4.0",
 	"type": "module"
 }
