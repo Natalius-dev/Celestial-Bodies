@@ -1,0 +1,15 @@
+{
+  "name": "celestial-bodies",
+  "version": "1.0.0",
+  "description": "A rewrite of github.com/Natalius-dev/Solar-System to make everything more modular",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/Natalius-dev/Celestial-Bodies"
+  },
+  "author": "Natalius",
+  "license": "SEE LICENSE IN LICENSE.md"
+}
