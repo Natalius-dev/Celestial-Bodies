@@ -9,7 +9,7 @@ i will do this later
 
 You can contact me at <nat@natalius.cc>
 
-## Technologies Used
+## Technologies and Libraries Used
 
 - [SvelteKit](https://kit.svelte.dev/)
 - [Tailwind](https://tailwindcss.com/)
