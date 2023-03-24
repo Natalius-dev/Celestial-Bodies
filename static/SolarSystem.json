@@ -1,7 +1,13 @@
 {
     "name": "Sun",
     "radius": 696.34,
+	"flat": 0,
     "texture": "https://raw.githubusercontent.com/Natalius-dev/Star-Systems/main/static/sun.jpg",
+	"tilt": 0,
+	"a": 0,
+    "e": 0,
+    "i": 0,
+    "rings": false,
     "children": [
         {
             "name": "Mercury",

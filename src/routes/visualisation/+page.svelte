@@ -23,7 +23,7 @@
         renderer.shadowMap.enabled = true;
         document.body.appendChild( renderer.domElement );
 
-        function generateOrbit(semi_major, eccentricity, inclination) {
+        function generateOrbit(semi_major, eccentricity, inclination, center) {
             const centerX = (semi_major*eccentricity); const centerY = 0;
             const semi_minor = semi_major*(Math.sqrt(1-(Math.pow(eccentricity,2))));
             const angle = degrees_to_radians(inclination);
@@ -72,6 +72,13 @@
                 pos.x = pos.x + ellipse[i].y * yAxis.x;
                 pos.y = pos.y + ellipse[i].y * yAxis.y;
                 pos.z = pos.z + ellipse[i].y * yAxis.z;
+
+                if(center !== undefined) {
+                    pos.x = pos.x + center.x;
+                    pos.y = pos.y + center.y;
+                    pos.z = pos.z + center.z;
+                }
+
                 pathArray.push(pos);
                 const node = new THREE.Mesh(new THREE.BoxGeometry(0.01, 0.01, 0.01), new THREE.MeshBasicMaterial({color:"#ff0000"}));
                 node.position.set(pos.x, pos.y, pos.z);
@@ -85,20 +92,27 @@
         }
 
         scene.add(new THREE.AmbientLight("#ffffff", 0.3));
-        const orbit = generateOrbit(4, 0.99, 20);
-        let i = 0;
+        let orbits = {};
+
+        function load(obj) {
+            console.log((Math.pow(Math.log10(obj.a), 7))/10000);
+            orbits[obj.name] = generateOrbit(obj.a > 0 ? ((Math.pow(Math.log10(obj.a), 7))/10000) : 0, obj.e, obj.i, orbits[obj.parent] === undefined ? new THREE.Vector3(0,0,0) : orbits[obj.parent][0]);
+            if(obj.children.length > 0) {
+                for(let i = 0; i < obj.children.length; i++) {
+                    obj.children[i].parent = obj.name;
+                    load(obj.children[i]);
+                }
+            }
+        }
+        load(system);
+
+        console.log(system);
 
         camera.position.z = 15;
-        camera.position.y = 0;
-
-        const cube = new THREE.Mesh(new THREE.BoxGeometry(0.15,0.15,0.15), new THREE.MeshStandardMaterial({color:"#00ff00"}));
-        scene.add(cube);
 
         function animate() {
             requestAnimationFrame( animate );
             controls.update();
-            cube.position.set(orbit[i].x, orbit[i].y, orbit[i].z);
-            i < 499 ? i += 1 : i = 0;
             renderer.render( scene, camera );
         }
         animate();
