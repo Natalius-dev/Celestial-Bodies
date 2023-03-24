@@ -11,6 +11,7 @@
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.5.0",
+		"@types/three": "^0.149.0",
 		"autoprefixer": "^10.4.14",
 		"postcss": "^8.4.21",
 		"svelte": "^3.54.0",
@@ -18,10 +19,13 @@
 		"vite": "^4.2.0"
 	},
 	"repository": {
-	  "type": "git",
-	  "url": "github.com/Natalius-dev/Star-Systems"
+		"type": "git",
+		"url": "github.com/Natalius-dev/Star-Systems"
 	},
 	"author": "Natalius",
 	"license": "CC BY-NC 4.0",
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"three": "^0.150.1"
+	}
 }

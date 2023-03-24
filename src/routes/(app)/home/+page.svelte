@@ -75,6 +75,7 @@
         document.getElementById("open").onclick =
         function openSystem() {
             console.log(localStorage.getItem(selectDOM.value));
+            window.location.href = "visualisation?system="+selectDOM.value;
         }
 
         // Import new Star System
