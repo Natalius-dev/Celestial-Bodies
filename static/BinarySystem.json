@@ -78,6 +78,8 @@
 				"radius": 1.7381,
 				"flat": 0.0012,
 				"texture": "https://raw.githubusercontent.com/Natalius-dev/Star-Systems/main/static/moon.jpg",
+				"normal": "https://raw.githubusercontent.com/Natalius-dev/Star-Systems/main/static/moon-normal.jpg",
+				"normalStrength": 2,
 				"tilt": 6.68,
 				"a": 1084.4,
 				"e": 0.249,

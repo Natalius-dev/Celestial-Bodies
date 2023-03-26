@@ -101,6 +101,7 @@
             if(obj.normal !== undefined) {
                 const normal = new THREE.TextureLoader().load(obj.normal);
                 objects[obj.name+" body"].material.normalMap = normal;
+                objects[obj.name+" body"].material.normalScale.set((obj.normalStrength !== undefined ? obj.normalStrength : 1), (obj.normalStrength !== undefined ? obj.normalStrength : 1));
             }
             objects[obj.name+" body"].position.set(objects[obj.name+" orbit"][obj.shift === undefined ? 0 : Math.round(obj.shift*objects[obj.name+" speed"])].x, objects[obj.name+" orbit"][obj.shift === undefined ? 0 : Math.round(obj.shift*objects[obj.name+" speed"])].y, objects[obj.name+" orbit"][obj.shift === undefined ? 0 : Math.round(obj.shift*objects[obj.name+" speed"])].z);
             objects[obj.name+" body"].receiveShadow = true;
@@ -142,7 +143,7 @@
                     localPoint.z + (parent === undefined ? 0 : (objects[parent+" orbit"][objects[parent+" index"]]).z)
                 );
             }
-            controls.target = objects["Planet 3 body"].position;
+            controls.target = objects["Planet 3 Moon body"].position;
             requestAnimationFrame( animate );
             controls.update();
             renderer.render( scene, camera );
