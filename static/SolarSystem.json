@@ -8,6 +8,7 @@
     "e": 0,
     "i": 0,
     "rings": false,
+	"brightness": 0.6,
     "children": [
         {
             "name": "Mercury",

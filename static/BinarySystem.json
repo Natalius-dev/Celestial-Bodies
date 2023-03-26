@@ -1,0 +1,128 @@
+{
+    "name": "Barycenter",
+    "radius": 0,
+    "flat": 0,
+    "texture": "",
+    "tilt": 0,
+    "a": 0,
+    "e": 0,
+    "i": 0,
+    "rings": false,
+    "children": [
+        {
+            "name": "Star 1",
+            "radius": 80,
+            "flat": 0.0009,
+            "texture": "https://raw.githubusercontent.com/Natalius-dev/Star-Systems/main/static/sun.jpg",
+            "tilt": 0.034,
+            "a": 100,
+            "e": 0.32,
+            "i": 0,
+            "rings": false,
+			"brightness": 0.35,
+            "children": []
+        },
+        {
+            "name":"Star 2",
+            "radius": 80,
+            "flat": 0,
+            "texture": "https://raw.githubusercontent.com/Natalius-dev/Star-Systems/main/static/sun.jpg",
+            "tilt": 2.64,
+            "a": 100,
+            "e": 0.32,
+            "i": 0,
+            "shift": 0.5,
+            "rings": false,
+			"brightness": 0.35,
+            "children": []
+        },
+        {
+            "name": "Captured planet",
+            "radius": 3.6,
+            "flat": 0.0009,
+            "texture": "https://raw.githubusercontent.com/Natalius-dev/Star-Systems/main/static/mercury.jpg",
+            "tilt": 0.034,
+            "a": 2652909.05,
+            "e": 0.765630,
+            "i": 213.004,
+			"shift": 0.5,
+            "rings": false,
+            "children": []
+        },
+        {
+            "name":"Planet 2",
+            "radius": 6.0518,
+            "flat": 0,
+            "texture": "https://raw.githubusercontent.com/Natalius-dev/Star-Systems/main/static/venus.jpg",
+            "tilt": 2.64,
+            "a": 72210,
+            "e": 0.2068,
+            "i": 3.395,
+            "rings": false,
+            "children": []
+        },
+        {
+            "name": "Planet 3",
+            "radius": 11.378137,
+            "flat": 0.003353,
+            "texture": "https://raw.githubusercontent.com/Natalius-dev/Star-Systems/main/static/earth.png",
+            "tilt": 23.44,
+            "a": 169598,
+            "e": 0.0167,
+            "i": -0.43,
+            "rings": false,
+            "children": [
+				{
+				"name": "Planet 3 Moon",
+				"radius": 1.7381,
+				"flat": 0.0012,
+				"texture": "https://raw.githubusercontent.com/Natalius-dev/Star-Systems/main/static/moon.jpg",
+				"tilt": 6.68,
+				"a": 1084.4,
+				"e": 0.249,
+				"i": 5.145,
+				"rings": false,
+				"children": []
+				}
+			]
+		},
+        {
+            "name": "Planet 4",
+            "radius": 759.378137,
+            "flat": 0.003353,
+            "texture": "https://raw.githubusercontent.com/Natalius-dev/Star-Systems/main/static/earth.png",
+            "tilt": 23.44,
+            "a": 669598,
+            "e": 0.024,
+            "i": 0.18,
+            "rings": false,
+            "children": [
+				{
+				"name": "Planet 4 Moon 1",
+				"radius": 6.7381,
+				"flat": 0.0012,
+				"texture": "https://raw.githubusercontent.com/Natalius-dev/Star-Systems/main/static/moon.jpg",
+				"tilt": 6.68,
+				"a": 14084.4,
+				"e": 0.449,
+				"i": -204.145,
+				"shift": 0.5,
+				"rings": false,
+				"children": []
+				},
+				{
+				"name": "Planet 4 Moon 2",
+				"radius": 0.8279,
+				"flat": 0.0012,
+				"texture": "https://raw.githubusercontent.com/Natalius-dev/Star-Systems/main/static/moon.jpg",
+				"tilt": 6.68,
+				"a": 1208.3,
+				"e": 0.0102,
+				"i": -1.342,
+				"rings": false,
+				"children": []
+				}
+			]
+		}
+    ]
+}

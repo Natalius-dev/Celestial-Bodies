@@ -2,71 +2,17 @@
     import Button from "../../../lib/Button.svelte"
     import { onMount } from "svelte";
 
+    const defaultSystems = [
+        "SolarSystem.json",
+        "BinarySystem.json"
+    ]
+
     onMount(() => {
-        localStorage.setItem("SolarSystem.json", JSON.stringify(JSON.parse(`
-        {
-            "name": "Sun",
-            "radius": 696.34,
-            "flat": 0,
-            "texture": "https://raw.githubusercontent.com/Natalius-dev/Star-Systems/main/static/sun.jpg",
-            "tilt": 0,
-            "a": 0,
-            "e": 0,
-            "i": 0,
-            "rings": false,
-            "children": [
-                {
-                    "name": "Mercury",
-                    "radius": 2.4397,
-                    "flat": 0.0009,
-                    "texture": "https://raw.githubusercontent.com/Natalius-dev/Star-Systems/main/static/mercury.jpg",
-                    "tilt": 0.034,
-                    "a": 57909.05,
-                    "e": 0.205630,
-                    "i": 7.004,
-                    "rings": false,
-                    "children": []
-                },
-                {
-                    "name":"Venus",
-                    "radius": 6.0518,
-                    "flat": 0,
-                    "texture": "https://raw.githubusercontent.com/Natalius-dev/Star-Systems/main/static/venus.jpg",
-                    "tilt": 2.64,
-                    "a": 108210,
-                    "e": 0.0068,
-                    "i": 3.395,
-                    "rings": false,
-                    "children": []
-                },
-                {
-                    "name": "Earth",
-                    "radius": 6.378137,
-                    "flat": 0.003353,
-                    "texture": "https://raw.githubusercontent.com/Natalius-dev/Star-Systems/main/static/earth.png",
-                    "tilt": 23.44,
-                    "a": 149598,
-                    "e": 0.0167,
-                    "i": 0,
-                    "rings": false,
-                    "children": [
-                        {
-                            "name": "Moon",
-                            "radius": 1.7381,
-                            "flat": 0.0012,
-                            "texture": "https://raw.githubusercontent.com/Natalius-dev/Star-Systems/main/static/moon.jpg",
-                            "tilt": 6.68,
-                            "a": 384.4,
-                            "e": 0.0549,
-                            "i": 5.145,
-                            "rings": false,
-                            "children": []
-                        }
-                    ]
-                }
-            ]
+        for(let i = 0; i < defaultSystems.length; i++) {
+            fetch(defaultSystems[i])
+                .then((response) => response.text())
+                .then((text) => localStorage.setItem(defaultSystems[i], text));
         }
-        `)));
 
         // Select existing Star System
         const selectDOM = document.getElementById("selectSystems");
@@ -85,6 +31,7 @@
         }
 
         // Import new Star System
+        var fr = new FileReader();
         const jsonErr = document.getElementById("jsonErr");
         let fileName;
         let result;
@@ -94,8 +41,6 @@
         if (files.length <= 0) {
             return false;
         }
-        
-        var fr = new FileReader();
         
         fr.onload = function(e) { 
             try {
