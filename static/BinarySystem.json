@@ -66,7 +66,7 @@
             "radius": 11.378137,
             "flat": 0.003353,
             "texture": "https://raw.githubusercontent.com/Natalius-dev/Star-Systems/main/static/earth.png",
-			"normal": "https://raw.githubusercontent.com/Natalius-dev/Star-Systems/main/static/earth normal.png",
+			"normal": "https://raw.githubusercontent.com/Natalius-dev/Star-Systems/main/static/earth-normal.png",
             "tilt": 23.44,
             "a": 169598,
             "e": 0.0167,

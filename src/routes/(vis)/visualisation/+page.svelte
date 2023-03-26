@@ -100,6 +100,7 @@
             objects[obj.name+" body"] = new THREE.Mesh(new THREE.IcosahedronGeometry(obj.radius !== 0 ? ((Math.pow(( Math.log10(obj.radius) < 0 ? 1 : Math.log10(obj.radius) ), 1.5)/8)+0.05) : 0, 8), new THREE.MeshStandardMaterial({map: texture}));
             if(obj.normal !== undefined) {
                 const normal = new THREE.TextureLoader().load(obj.normal);
+                console.log(obj.normal);
                 objects[obj.name+" body"].material.normalMap = normal;
                 objects[obj.name+" body"].material.normalScale.set(2, 2);
             }
