@@ -101,6 +101,7 @@
             if(obj.normal !== undefined) {
                 const normal = new THREE.TextureLoader().load(obj.normal);
                 objects[obj.name+" body"].material.normalMap = normal;
+                objects[obj.name+" body"].material.normalScale.set(2, 2);
             }
             objects[obj.name+" body"].position.set(objects[obj.name+" orbit"][obj.shift === undefined ? 0 : Math.round(obj.shift*objects[obj.name+" speed"])].x, objects[obj.name+" orbit"][obj.shift === undefined ? 0 : Math.round(obj.shift*objects[obj.name+" speed"])].y, objects[obj.name+" orbit"][obj.shift === undefined ? 0 : Math.round(obj.shift*objects[obj.name+" speed"])].z);
             objects[obj.name+" body"].receiveShadow = true;
